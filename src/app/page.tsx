@@ -240,82 +240,144 @@ export default async function LandingPage() {
       </section>
 
       {/* CONSULTATION */}
-      <section id="consultation" className="py-20">
+      <section id="consultation" className="py-20 bg-[#eef2f7]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-teal-500 to-teal-700 rounded-3xl overflow-hidden shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              {/* Left */}
-              <div className="p-10 md:p-14 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 w-fit">
-                  <Video className="h-3.5 w-3.5" />
-                  Google Meet — Live Session
-                </div>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
-                  Book a Free SEO<br />Consultation
-                </h2>
-                <p className="text-teal-100 text-sm leading-relaxed mb-8">
-                  Get a 1-on-1 session with our SEO experts via Google Meet. We&apos;ll audit your site, review your content strategy, and show you exactly how to use AntiGravity SEO to rank faster.
-                </p>
-                <ul className="space-y-3 mb-10">
-                  {[
-                    "Live site audit & keyword review",
-                    "Custom content strategy for your niche",
-                    "Hands-on demo with your own keywords",
-                    "Q&A — ask anything about SEO",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm text-white">
-                      <BadgeCheck className="h-4 w-4 text-teal-200 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="https://meet.google.com/new"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-teal-600 font-bold px-6 py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm w-fit"
-                >
-                  <Video className="h-4 w-4" />
-                  Book Your Free Session
-                </a>
-              </div>
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <Video className="h-3.5 w-3.5" />
+              Google Meet — 1-on-1 SEO Consultation
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Book a Live SEO Consultation</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Work directly with our SEO experts via Google Meet. Choose the session that fits your needs — from a quick audit to a full strategy overhaul.
+            </p>
+          </div>
 
-              {/* Right */}
-              <div className="bg-white/10 backdrop-blur p-10 md:p-14 flex flex-col justify-center gap-6">
-                <h3 className="text-white font-bold text-lg mb-2">Session Details</h3>
-                {[
-                  {
-                    icon: Clock,
-                    title: "30-Minute Session",
-                    desc: "Focused, no-fluff consultation tailored to your site.",
-                  },
-                  {
-                    icon: Video,
-                    title: "Google Meet",
-                    desc: "Join from anywhere — no software install needed.",
-                  },
-                  {
-                    icon: CalendarDays,
-                    title: "Flexible Scheduling",
-                    desc: "Pick a time that works for you, 7 days a week.",
-                  },
-                  {
-                    icon: BadgeCheck,
-                    title: "100% Free",
-                    desc: "No credit card, no obligation. Just real SEO advice.",
-                  },
-                ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
-                      <Icon className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-sm">{title}</p>
-                      <p className="text-teal-100 text-xs mt-0.5">{desc}</p>
-                    </div>
-                  </div>
-                ))}
+          {/* What's included banner */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-10 flex flex-wrap gap-6 justify-center">
+            {[
+              { icon: Clock, text: "Live Google Meet session" },
+              { icon: CalendarDays, text: "Flexible scheduling, 7 days/week" },
+              { icon: BadgeCheck, text: "Recorded & sent to you" },
+              { icon: Video, text: "Screen sharing & live audit" },
+            ].map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-2 text-sm text-gray-600">
+                <Icon className="h-4 w-4 text-teal-500 shrink-0" />
+                {text}
               </div>
+            ))}
+          </div>
+
+          {/* Pricing Plans */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Starter */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col">
+              <div className="mb-6">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Starter</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold text-gray-900">$29</span>
+                  <span className="text-gray-400 text-sm">/session</span>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">30-minute quick audit session</p>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "30-min Google Meet session",
+                  "On-page SEO audit (up to 5 pages)",
+                  "Keyword gap analysis",
+                  "Action checklist delivered after",
+                  "Email follow-up support (48h)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <Check className="h-4 w-4 text-teal-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://meet.google.com/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full border-2 border-teal-500 text-teal-600 font-semibold py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm"
+              >
+                <Video className="h-4 w-4" /> Book Starter
+              </a>
+            </div>
+
+            {/* Pro — featured */}
+            <div className="bg-gradient-to-b from-teal-500 to-teal-700 rounded-2xl shadow-xl p-8 flex flex-col relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-bold px-4 py-1 rounded-full">
+                MOST POPULAR
+              </div>
+              <div className="mb-6">
+                <p className="text-xs font-bold text-teal-100 uppercase tracking-widest mb-2">Pro</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold text-white">$79</span>
+                  <span className="text-teal-200 text-sm">/session</span>
+                </div>
+                <p className="text-sm text-teal-100 mt-2">60-minute full strategy session</p>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "60-min Google Meet session",
+                  "Full site SEO audit",
+                  "Content strategy & topic clusters",
+                  "Competitor analysis",
+                  "Custom keyword roadmap",
+                  "Session recording included",
+                  "Priority email support (7 days)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-white">
+                    <Check className="h-4 w-4 text-teal-200 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://meet.google.com/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-white text-teal-600 font-bold py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm"
+              >
+                <Video className="h-4 w-4" /> Book Pro Session
+              </a>
+            </div>
+
+            {/* Agency */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col">
+              <div className="mb-6">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Agency</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold text-gray-900">$199</span>
+                  <span className="text-gray-400 text-sm">/session</span>
+                </div>
+                <p className="text-sm text-gray-500 mt-2">90-min deep-dive for teams & agencies</p>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  "90-min Google Meet session",
+                  "Multi-site / client audit",
+                  "Full technical SEO review",
+                  "Link building strategy",
+                  "AI content workflow setup",
+                  "Custom report delivered (PDF)",
+                  "30-day email support",
+                  "Up to 3 team members",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <Check className="h-4 w-4 text-teal-500 shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://meet.google.com/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full border-2 border-teal-500 text-teal-600 font-semibold py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm"
+              >
+                <Video className="h-4 w-4" /> Book Agency Session
+              </a>
             </div>
           </div>
         </div>
