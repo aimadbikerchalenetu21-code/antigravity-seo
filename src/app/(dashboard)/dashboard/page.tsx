@@ -2,11 +2,18 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/db";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FolderOpen, Zap, History, Key, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+
+const btnOutline =
+  "inline-flex items-center justify-center rounded-lg border border-border bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground";
+
+const btnGhost =
+  "inline-flex items-center justify-center rounded-lg px-2.5 py-1.5 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground";
+
+const btnDefault =
+  "inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80";
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
@@ -79,14 +86,7 @@ export default async function DashboardPage() {
             { href: "/history", icon: History, label: "View History" },
             { href: "/api-keys", icon: Key, label: "Manage API Keys" },
           ].map(({ href, icon: Icon, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={cn(
-                buttonVariants({ variant: "outline" }),
-                "h-auto py-4 flex-col gap-2"
-              )}
-            >
+            <Link key={href} href={href} className={`${btnOutline} h-auto py-4 flex-col gap-2`}>
               <Icon className="h-5 w-5 text-primary" />
               <span>{label}</span>
             </Link>
@@ -99,10 +99,7 @@ export default async function DashboardPage() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Recent Generations</h2>
-            <Link
-              href="/history"
-              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-1")}
-            >
+            <Link href="/history" className={`${btnGhost} gap-1`}>
               View all <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
@@ -138,7 +135,7 @@ export default async function DashboardPage() {
                 Add an API key to start generating content.
               </p>
             </div>
-            <Link href="/api-keys" className={buttonVariants({ size: "sm" })}>
+            <Link href="/api-keys" className={btnDefault}>
               Add API Key
             </Link>
           </CardContent>
