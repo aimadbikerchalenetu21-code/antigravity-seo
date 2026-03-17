@@ -13,6 +13,10 @@ import {
   X,
   ArrowRight,
   ChevronRight,
+  Video,
+  Clock,
+  CalendarDays,
+  BadgeCheck,
 } from "lucide-react";
 
 export default async function LandingPage() {
@@ -31,6 +35,7 @@ export default async function LandingPage() {
           <nav className="hidden md:flex items-center gap-8 text-sm text-gray-600">
             <a href="#features" className="hover:text-gray-900 transition-colors">Features</a>
             <a href="#how-it-works" className="hover:text-gray-900 transition-colors">How It Works</a>
+            <a href="#consultation" className="hover:text-gray-900 transition-colors">Consultation</a>
             <a href="#pricing" className="hover:text-gray-900 transition-colors">Pricing</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -229,6 +234,88 @@ export default async function LandingPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONSULTATION */}
+      <section id="consultation" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-teal-500 to-teal-700 rounded-3xl overflow-hidden shadow-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              {/* Left */}
+              <div className="p-10 md:p-14 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 w-fit">
+                  <Video className="h-3.5 w-3.5" />
+                  Google Meet — Live Session
+                </div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+                  Book a Free SEO<br />Consultation
+                </h2>
+                <p className="text-teal-100 text-sm leading-relaxed mb-8">
+                  Get a 1-on-1 session with our SEO experts via Google Meet. We&apos;ll audit your site, review your content strategy, and show you exactly how to use AntiGravity SEO to rank faster.
+                </p>
+                <ul className="space-y-3 mb-10">
+                  {[
+                    "Live site audit & keyword review",
+                    "Custom content strategy for your niche",
+                    "Hands-on demo with your own keywords",
+                    "Q&A — ask anything about SEO",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm text-white">
+                      <BadgeCheck className="h-4 w-4 text-teal-200 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://meet.google.com/new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-teal-600 font-bold px-6 py-3 rounded-xl hover:bg-teal-50 transition-colors text-sm w-fit"
+                >
+                  <Video className="h-4 w-4" />
+                  Book Your Free Session
+                </a>
+              </div>
+
+              {/* Right */}
+              <div className="bg-white/10 backdrop-blur p-10 md:p-14 flex flex-col justify-center gap-6">
+                <h3 className="text-white font-bold text-lg mb-2">Session Details</h3>
+                {[
+                  {
+                    icon: Clock,
+                    title: "30-Minute Session",
+                    desc: "Focused, no-fluff consultation tailored to your site.",
+                  },
+                  {
+                    icon: Video,
+                    title: "Google Meet",
+                    desc: "Join from anywhere — no software install needed.",
+                  },
+                  {
+                    icon: CalendarDays,
+                    title: "Flexible Scheduling",
+                    desc: "Pick a time that works for you, 7 days a week.",
+                  },
+                  {
+                    icon: BadgeCheck,
+                    title: "100% Free",
+                    desc: "No credit card, no obligation. Just real SEO advice.",
+                  },
+                ].map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                      <Icon className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">{title}</p>
+                      <p className="text-teal-100 text-xs mt-0.5">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
