@@ -14,6 +14,7 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
+import PricingWizard from "@/components/pricing-wizard";
 
 export default async function LandingPage() {
   const session = await getServerSession(authOptions);
@@ -235,54 +236,12 @@ export default async function LandingPage() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-20">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-            LIVE NOW
-          </div>
+      <section id="pricing" className="py-20 bg-[#eef2f7]">
+        <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">Simple, Transparent Pricing</h2>
-          <p className="text-gray-500 mb-10">Choose the plan that fits your needs. Scale with your team.</p>
-
-          <div className="bg-white rounded-2xl border-2 border-teal-400 shadow-lg p-8 text-left">
-            <div className="flex items-baseline gap-1 mb-6">
-              <span className="text-5xl font-extrabold text-gray-900">$69</span>
-              <span className="text-2xl font-bold text-gray-900">.99</span>
-              <span className="text-gray-400 ml-1">/year</span>
-            </div>
-            <ul className="space-y-3 mb-8">
-              {[
-                "Unlimited content generation",
-                "All SEO languages",
-                "OpenAI, Anthropic & Google",
-                "Link strategy tools",
-                "Export to HTML & JSON",
-                "Bring your own API keys",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                  <Check className="h-4 w-4 text-teal-500 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/register"
-              className="flex items-center justify-center gap-2 w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 rounded-lg transition-colors text-sm"
-            >
-              Get Started Now <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="mt-6 flex items-center justify-between bg-gray-50 border border-gray-200 rounded-xl px-5 py-4">
-            <div className="text-left">
-              <p className="text-sm font-semibold text-gray-900">Not sure yet? Try Risk-Free.</p>
-              <p className="text-xs text-gray-500">Get full access for 24 hours. No strings attached.</p>
-            </div>
-            <div className="text-right">
-              <div className="text-xl font-bold text-gray-900">$1.99</div>
-              <div className="text-xs text-gray-400">24 hours</div>
-            </div>
-          </div>
+          <p className="text-gray-500">Choose the plan that fits your needs. Scale with your team.</p>
         </div>
+        <PricingWizard />
       </section>
 
       {/* CTA */}
