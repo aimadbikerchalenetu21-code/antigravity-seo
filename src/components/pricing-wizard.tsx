@@ -4,55 +4,25 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { User, FileText, ShieldCheck, Zap } from "lucide-react";
 
-const PLANS = [
-  {
-    label: "1 Month",
-    total: 16.99,
-    perMonth: 16.99,
-    badge: null,
-    highlight: false,
-  },
-  {
-    label: "3 Months",
-    total: 29.99,
-    perMonth: 10.0,
-    badge: "Save 40%",
-    badgeColor: "bg-green-100 text-green-600",
-    highlight: false,
-    savings: "−$10/mo",
-    savingsLink: "Save more",
-  },
-  {
-    label: "6 Months",
-    total: 40.99,
-    perMonth: 6.83,
-    badge: "Save 58%",
-    badgeColor: "bg-green-100 text-green-600",
-    highlight: false,
-    savings: "−$6.83/mo",
-    savingsLink: "Save more",
-  },
-  {
-    label: "12 Months",
-    total: 69.99,
-    perMonth: 5.83,
-    badge: "Best Value",
-    badgeColor: "bg-orange-100 text-orange-500",
-    highlight: true,
-    savings: "−$5.83/mo",
-    savingsLink: "Best deal!",
-  },
+// Exact pricing matrix [users-1][planIndex]
+const PRICES = [
+  [16.99, 29.99, 40.99, 69.99],   // 1 user
+  [23.99, 46.99, 75.99, 128.99],  // 2 users
+  [31.99, 53.99, 116.99, 174.99], // 3 users
+  [38.99, 88.99, 151.99, 221.99], // 4 users
 ];
 
-const USER_OPTIONS = [1, 2, 3, 4];
+const PLANS = [
+  { label: "1 Month",   badge: null,          badgeColor: "",                          subLabel: "per month",  highlight: false },
+  { label: "3 Months",  badge: "Save 40%",    badgeColor: "bg-green-100 text-green-600", subLabel: "Save more",  highlight: false },
+  { label: "6 Months",  badge: "Save 58%",    badgeColor: "bg-green-100 text-green-600", subLabel: "Save more",  highlight: false },
+  { label: "12 Months", badge: "Best Value",  badgeColor: "bg-orange-100 text-orange-500", subLabel: "Best deal!", highlight: true  },
+];
 
 export default function PricingWizard() {
-  const [selectedUsers, setSelectedUsers] = useState(1);
+  const [selectedUsers, setSelectedUsers] = useState(0); // index 0 = 1 user
   const [selectedPlan, setSelectedPlan] = useState(3);
   const router = useRouter();
-
-  const plan = PLANS[selectedPlan];
-  const totalPrice = (plan.total * selectedUsers).toFixed(2);
 
   return (
     <div className="max-w-2xl mx-auto px-6">
@@ -81,12 +51,12 @@ export default function PricingWizard() {
           How many users will you have?
         </p>
         <div className="grid grid-cols-4 gap-3 mb-8">
-          {USER_OPTIONS.map((u) => (
+          {[1, 2, 3, 4].map((u, i) => (
             <button
               key={u}
-              onClick={() => setSelectedUsers(u)}
+              onClick={() => setSelectedUsers(i)}
               className={`flex flex-col items-center justify-center gap-2 py-4 rounded-xl border-2 text-sm font-semibold transition-all ${
-                selectedUsers === u
+                selectedUsers === i
                   ? "border-teal-500 bg-teal-50 text-teal-700"
                   : "border-gray-200 text-gray-700 hover:border-teal-300"
               }`}
@@ -118,18 +88,12 @@ export default function PricingWizard() {
                 </span>
               )}
               <span className="text-gray-500 text-xs mb-1">{p.label}</span>
-              <span className="text-xl font-extrabold text-red-500">${(p.total * selectedUsers).toFixed(2)}</span>
-              {p.savings && (
-                <>
-                  <span className="text-xs text-gray-400 mt-0.5">{p.savings}</span>
-                  <span className={`text-xs font-semibold mt-0.5 ${p.highlight ? "text-orange-500" : "text-teal-500"}`}>
-                    {p.savingsLink}
-                  </span>
-                </>
-              )}
-              {!p.savings && (
-                <span className="text-xs text-gray-400 mt-0.5">per month</span>
-              )}
+              <span className="text-xl font-extrabold text-red-500">
+                ${PRICES[selectedUsers][i].toFixed(2)}
+              </span>
+              <span className={`text-xs font-semibold mt-0.5 ${p.highlight ? "text-orange-500" : i === 0 ? "text-gray-400" : "text-teal-500"}`}>
+                {p.subLabel}
+              </span>
             </button>
           ))}
         </div>
@@ -145,12 +109,24 @@ export default function PricingWizard() {
           14-day money-back guarantee. No questions asked.
         </p>
 
+        {/* Trial offer */}
+        <div className="mt-4 flex items-center justify-between bg-gray-50 border border-gray-200 rounded-xl px-5 py-4">
+          <div>
+            <p className="text-sm font-semibold text-gray-900">Not sure yet? Try Risk-Free.</p>
+            <p className="text-xs text-gray-500">Get full access for 24 hours. No strings attached.</p>
+          </div>
+          <div className="text-right shrink-0 ml-4">
+            <div className="text-xl font-bold text-gray-900">$1.99</div>
+            <div className="text-xs text-gray-400">24 hours</div>
+          </div>
+        </div>
+
         {/* Trust badges */}
         <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-3 gap-4 text-center">
           {[
-            { icon: FileText, title: "Transparent pricing", desc: "No contracts. Cancel anytime." },
-            { icon: Zap, title: "Instant activation", desc: "Start watching in minutes." },
-            { icon: ShieldCheck, title: "Risk-free", desc: "14-day money-back guarantee." },
+            { icon: FileText,    title: "Transparent pricing", desc: "No contracts. Cancel anytime." },
+            { icon: Zap,         title: "Instant activation",  desc: "Start in minutes." },
+            { icon: ShieldCheck, title: "Risk-free",           desc: "14-day money-back guarantee." },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="flex flex-col items-center gap-1">
               <Icon className="h-5 w-5 text-teal-500 mb-1" />
