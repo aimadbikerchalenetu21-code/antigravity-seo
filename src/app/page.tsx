@@ -269,15 +269,22 @@ export default async function LandingPage() {
               <Zap className="h-4 w-4 text-teal-500" />
               BingDrop
             </div>
-            <div className="flex items-center gap-6 text-sm text-gray-500">
-              <a href="#features" className="hover:text-gray-300 transition-colors">Features</a>
-              <a href="#pricing" className="hover:text-gray-300 transition-colors">Pricing</a>
-              <Link href="/login" className="hover:text-gray-300 transition-colors">Login</Link>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+              <a href="#features"   className="hover:text-gray-300 transition-colors">Features</a>
+              <a href="#pricing"    className="hover:text-gray-300 transition-colors">Pricing</a>
+              <Link href="/about"   className="hover:text-gray-300 transition-colors">About</Link>
+              <Link href="/login"   className="hover:text-gray-300 transition-colors">Login</Link>
               <Link href="/register" className="hover:text-gray-300 transition-colors">Sign Up</Link>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-gray-800 text-center text-xs text-gray-600">
-            © {new Date().getFullYear()} BingDrop. All rights reserved.
+          <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-600">
+            <Link href="/privacy"  className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms"    className="hover:text-gray-400 transition-colors">Terms of Service</Link>
+            <Link href="/cookies"  className="hover:text-gray-400 transition-colors">Cookie Policy</Link>
+            <Link href="/refund"   className="hover:text-gray-400 transition-colors">Refund Policy</Link>
+          </div>
+          <div className="mt-3 text-center text-xs text-gray-600">
+            © {new Date().getFullYear()} BingDrop — Bikerchalen LLC, 127 N Higgins Ave Ste 307D, Missoula, MT 59802. All rights reserved.
           </div>
         </div>
       </footer>
