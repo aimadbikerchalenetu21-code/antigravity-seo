@@ -76,7 +76,7 @@ export default function RefundPage() {
               <li>The guarantee applies to the <strong>first purchase</strong> of each subscription tier.</li>
               <li>It does not apply to renewal charges — please cancel before renewal if you wish to stop.</li>
               <li>Refunds are issued to the original payment method within 5–10 business days.</li>
-              <li>To request a refund, email <a href="mailto:support@bingdrop.com" className="text-teal-600 hover:underline">support@bingdrop.com</a> with your account email and order details.</li>
+              <li>To request a refund, email <a href="mailto:contact@bingdrop.com" className="text-teal-600 hover:underline">contact@bingdrop.com</a> with your account email and order details.</li>
             </ul>
           </LegalSection>
 
@@ -92,7 +92,7 @@ export default function RefundPage() {
             <p>You can cancel your subscription at any time using either of the following methods:</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
               <li><strong>Account Settings:</strong> Navigate to your account settings and select "Cancel Subscription".</li>
-              <li><strong>Email:</strong> Contact <a href="mailto:support@bingdrop.com" className="text-teal-600 hover:underline">support@bingdrop.com</a> from your registered email address.</li>
+              <li><strong>Email:</strong> Contact <a href="mailto:contact@bingdrop.com" className="text-teal-600 hover:underline">contact@bingdrop.com</a> from your registered email address.</li>
             </ul>
             <p className="mt-3">
               Upon cancellation, your subscription will remain active through the end of the current paid billing period.
@@ -136,7 +136,7 @@ export default function RefundPage() {
               <strong>Bikerchalen LLC — BingDrop Support</strong><br />
               127 N Higgins Ave, Ste 307D, Num 1765<br />
               Missoula, MT 59802, United States<br />
-              Email: <a href="mailto:support@bingdrop.com" className="text-teal-600 hover:underline">support@bingdrop.com</a><br />
+              Email: <a href="mailto:contact@bingdrop.com" className="text-teal-600 hover:underline">contact@bingdrop.com</a><br />
               Response time: within 2 business days
             </address>
           </LegalSection>

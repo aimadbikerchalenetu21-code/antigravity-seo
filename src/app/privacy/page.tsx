@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               <li><strong>Objection / Restriction:</strong> Object to or restrict certain types of processing.</li>
               <li><strong>Opt-out of Sale (CCPA):</strong> California residents may opt out of the sale of personal information. We do not sell personal information.</li>
             </ul>
-            <p className="mt-3">To exercise any of these rights, email us at <strong>support@bingdrop.com</strong>.</p>
+            <p className="mt-3">To exercise any of these rights, email us at <strong>contact@bingdrop.com</strong>.</p>
           </LegalSection>
 
           <LegalSection title="7. Security">
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
               127 N Higgins Ave, Ste 307D, Num 1765<br />
               Missoula, MT 59802<br />
               United States<br />
-              Email: <a href="mailto:support@bingdrop.com" className="text-teal-600 hover:underline">support@bingdrop.com</a>
+              Email: <a href="mailto:contact@bingdrop.com" className="text-teal-600 hover:underline">contact@bingdrop.com</a>
             </address>
           </LegalSection>
 

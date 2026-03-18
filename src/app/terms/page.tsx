@@ -180,7 +180,7 @@ export default function TermsPage() {
               <strong>Bikerchalen LLC</strong><br />
               127 N Higgins Ave, Ste 307D, Num 1765<br />
               Missoula, MT 59802, United States<br />
-              Email: <a href="mailto:support@bingdrop.com" className="text-teal-600 hover:underline">support@bingdrop.com</a>
+              Email: <a href="mailto:contact@bingdrop.com" className="text-teal-600 hover:underline">contact@bingdrop.com</a>
             </address>
           </LegalSection>
 

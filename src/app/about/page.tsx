@@ -240,7 +240,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-teal-500 shrink-0" />
-                <span>support@bingdrop.com</span>
+                <span>contact@bingdrop.com</span>
               </div>
             </div>
           </div>
