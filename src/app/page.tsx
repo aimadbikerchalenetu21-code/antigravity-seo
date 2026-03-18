@@ -30,7 +30,7 @@ export default async function LandingPage() {
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-lg">
             <Zap className="h-5 w-5 text-teal-500" />
-            <span>AntiGravity SEO</span>
+            <span>BingDrop</span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm text-gray-600">
             <a href="#features" className="hover:text-gray-900 transition-colors">Features</a>
@@ -191,7 +191,7 @@ export default async function LandingPage() {
       <section className="bg-[#eef2f7] py-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Why Choose AntiGravity SEO?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Why Choose BingDrop?</h2>
             <p className="text-gray-500">See how we stack up against traditional tools.</p>
           </div>
           <div className="grid grid-cols-2 gap-5">
@@ -219,7 +219,7 @@ export default async function LandingPage() {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                 AI POWERED
               </div>
-              <h3 className="font-semibold text-teal-600 mb-4 text-sm uppercase tracking-wide">AntiGravity SEO</h3>
+              <h3 className="font-semibold text-teal-600 mb-4 text-sm uppercase tracking-wide">BingDrop</h3>
               <ul className="space-y-3 text-sm text-gray-700">
                 {[
                   "Free BYOK Model (Pay per API)",
@@ -456,7 +456,7 @@ export default async function LandingPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-white font-bold">
               <Zap className="h-4 w-4 text-teal-500" />
-              AntiGravity SEO
+              BingDrop
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="#features" className="hover:text-gray-300 transition-colors">Features</a>
@@ -466,7 +466,7 @@ export default async function LandingPage() {
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-gray-800 text-center text-xs text-gray-600">
-            © {new Date().getFullYear()} AntiGravity SEO. All rights reserved.
+            © {new Date().getFullYear()} BingDrop. All rights reserved.
           </div>
         </div>
       </footer>

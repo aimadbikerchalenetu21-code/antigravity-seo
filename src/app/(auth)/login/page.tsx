@@ -47,7 +47,7 @@ export default function LoginPage() {
         <div className="flex justify-center mb-2">
           <div className="flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">AntiGravity SEO</span>
+            <span className="text-xl font-bold">BingDrop</span>
           </div>
         </div>
         <CardTitle className="text-2xl">Welcome back</CardTitle>

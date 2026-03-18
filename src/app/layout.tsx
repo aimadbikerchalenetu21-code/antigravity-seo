@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AntiGravity SEO",
+  title: "BingDrop",
   description: "AI-powered SEO content generation platform",
 };
 

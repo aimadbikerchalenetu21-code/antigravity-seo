@@ -44,7 +44,7 @@ export function Sidebar() {
       {/* Logo */}
       <div className="flex items-center gap-2 px-5 py-5">
         <Zap className="h-5 w-5 text-primary shrink-0" />
-        <span className="font-bold text-base tracking-tight">AntiGravity SEO</span>
+        <span className="font-bold text-base tracking-tight">BingDrop</span>
       </div>
 
       <Separator />
